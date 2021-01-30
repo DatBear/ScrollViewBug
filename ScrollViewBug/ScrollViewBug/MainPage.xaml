@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:scrollViewBug="clr-namespace:ScrollViewBug;assembly=ScrollViewBug"
+             x:Class="ScrollViewBug.MainPage"
+             x:DataType="{x:Type scrollViewBug:MainPageViewModel}">
+
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Lorem" />
+            <Label Text="ipsum" />
+            <Label Text="dolor" />
+            <Label Text="sit" />
+            <Label Text="amet," />
+            <Label Text="consectetur" />
+            <Label Text="adipiscing" />
+            <Label Text="elit." />
+            <Label Text="Integer" />
+            <Label Text="pretium" />
+            <Label Text="nunc" />
+            <StackLayout BindableLayout.ItemsSource="{Binding Data}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="{x:Type x:String}">
+                        <Frame HeightRequest="30" BackgroundColor="Red">
+                            <StackLayout>
+                                <Label Text="{Binding .}" FontSize="Large" TextColor="Blue" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+                
+            </StackLayout>
+            <Button Text="Add Data" Command="{Binding AddDataCommand}" />
+
+            <Label Text="ac" />
+            <Label Text="lacinia" />
+            <Label Text="interdum." />
+            <Label Text="Duis" />
+            <Label Text="auctor" />
+            <Label Text="tortor" />
+            <Label Text="leo," />
+            <Label Text="nec" />
+            <Label Text="blandit" />
+            <Label Text="purus" />
+            <Label Text="egestas" />
+            <Button Text="Button" />
+            <Label Text="quis." />
+
+        </StackLayout>
+    </ScrollView>
+    
+
+</ContentPage>
